@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+aiosqlite
+pydantic
+asyncpg
+python-dotenv
+openai
+groq
+alembic
+passlib[bcrypt]
+python-jose[cryptography]
+email-validator
