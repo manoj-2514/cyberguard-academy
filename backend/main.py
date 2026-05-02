@@ -21,7 +21,10 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup():
-    pass
+    # Ensure database tables are created when the server starts
+    from backend.database import engine, Base
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
 
 app.include_router(auth.router)
 app.include_router(user.router)
