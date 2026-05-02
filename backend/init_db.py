@@ -1,4 +1,10 @@
 import asyncio
+import sys
+import os
+
+# Add the parent directory to sys.path so it can find the "backend" module
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from backend.database import engine, Base
 from backend import models
 
